@@ -1,0 +1,911 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的订单 - 爱之谷商城</title>
+<link href="http://img.aizhigu.tv/styles/1230common_index.css" rel="stylesheet" type="text/css" />
+<link href="http://img.aizhigu.tv/styles/member.css" rel="stylesheet" type="text/css" />
+<link href="http://img.aizhigu.tv/js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://img.aizhigu.tv/js/jquery.js"></script>
+<script type="text/javascript" src="http://img.aizhigu.tv/js/thickbox.js"></script>
+</head>
+
+<body>
+<!--头部开始-->
+
+
+ 
+
+<style type="text/css">
+.borD6{ border:#cccccc 1px solid;}
+.redd9{ color:#cc0000;}
+.leftgoods ul.historydlist li{ width:67px; height:95; float:left; margin-left:15px; margin-top:5px;margin-bottom:10px;}
+.leftgoods ul.historydlist li img{width:65px; height:65px; border:#eeeeee 1px solid;}
+</style>
+
+<script type="text/javascript" src="http://img.aizhigu.tv/js/jquery.js"></script> 
+<script type="text/javascript" src="http://img.aizhigu.tv/js/hd_cache.js"></script> 
+<script type="text/javascript" src="http://img.aizhigu.tv/js/index_com.js"></script> 
+<script type="text/javascript">
+/*
+window.onload=function(){
+    var d1=document.getElementById("d1");
+    var d2=document.getElementById("d2");
+	var d3=document.getElementById("d3");
+	var d4=document.getElementById("d4");
+	var d5=document.getElementById("d5");
+	var d6=document.getElementById("d6");
+	var d7=document.getElementById("d7");
+	var d8=document.getElementById("d8");
+    d1.onmouseover=function(){
+        d2.style.display="block";
+    };
+    d1.onmouseout=function(){
+        d2.style.display="none";
+    }
+	 d3.onmouseover=function(){
+        d4.style.display="block";
+    };
+    d3.onmouseout=function(){
+        d4.style.display="none";
+    }
+	 d5.onmouseover=function(){
+        d6.style.display="block";
+    };
+    d5.onmouseout=function(){
+        d6.style.display="none";
+    }
+	 d7.onmouseover=function(){
+        d8.style.display="block";
+    };
+    d7.onmouseout=function(){
+        d8.style.display="none";
+    }
+}
+*/
+</script>
+
+<!-- 顶部ad -->
+
+<!--顶部快捷导航-->
+<div class="topbrief">
+	<div class="topbrief_mid">
+				<p class="sitenav_mobile"><a href="/jumpto_wap.html" target="_blank" style="position: relative;">爱之谷微信
+  <img src="http://img.aizhigu.tv/images/tpl/index_new/azg_mobilesite.png" width="160" height="159" class="hidden" style="display:none;position: absolute;
+left: -50px;top:20px;*+top:20px;_top:20px;border: 1px solid #ddd;"></a></p>
+       <p class="wap_mobile"><a href="http://wap.aizhigu.com.cn" target="_blank" title="爱之谷_成人用品商城—手机爱之谷" style="position: relative;">手机爱之谷</a></p>
+	<script>
+		$.get("/ajax/cp_back.php?pos=mobile", function(data){
+		if(data){
+			$(".wap_mobile a").attr("href",data);
+			}
+		});
+		$(".topbrief_mid .sitenav_mobile").bind("mouseover",function(){	$(".topbrief_mid .sitenav_mobile a img").toggle();	});
+		$(".topbrief_mid .sitenav_mobile").bind("mouseout",function(){	$(".topbrief_mid .sitenav_mobile a img").toggle();	});
+	</script>
+		<p class="sitenav_lovesave"><a href="javascript:void(0);" onclick="javascript:AddFavorite('/','爱之谷')" rel="nofollow" title="爱之谷_成人用品商城—收藏爱之谷">收藏爱之谷</a></p>
+        		<p class="sitenav_help"><a href="/help/" target="_blank" rel="nofollow" title="爱之谷_成人用品商城—帮助中心">帮助中心</a></p>
+
+
+		<div class="brief_login">
+						<span class="col666 left" style=" margin-right:5px;">欢迎回到爱之谷!</span>
+           	<span class="left" style=" margin-right:5px;">122wre123@qq.com<a href="/logout.php" style=" color:#666; margin-left:5px;">退出</a>
+           	</span>
+             <span style=" float:left;color:#d7d6d6;">| <a href="/member.php?act=order_list" target="_blank" title="订单查询">订单查询</a> |</span>
+             <span class="hyzx" id="member"><a href="/member.php" class="impor" id="amember">我的爱之谷</a>
+	             <dl class="hyzx_list" style=" display:none;">
+             		<dd><a href="/member.php?act=order_list" target="_blank" title="我的订单_爱之谷">我的订单</a></dd>
+					<dd><a href="/member.php?act=bonus" target="_blank" title="我的电子礼券_爱之谷">我的电子礼券</a></dd>
+		            <dd><a href="/member.php?act=integral" target="_blank" title="我的积分_爱之谷">我的积分</a></dd>
+		            <dd><a href="/member.php?act=account" target="_blank" title="我的余额_爱之谷">我的余额</a></dd>
+		            <dd><a href="/member.php?act=collection_list" target="_blank" title="我的收藏_爱之谷">我的收藏</a></dd>
+		            <dd><a href="/member.php?act=comment_list" target="_blank" title="我的评价_爱之谷">我的评价</a></dd>
+		            <dd><a href="/member.php?act=consult_list" target="_blank" title="我的咨询_爱之谷">我的咨询</a></dd>
+		            <dd><a href="/member.php" target="_blank" title="会员中心_爱之谷">会员中心</a></dd>
+	             </dl>
+             </span>
+					</div>
+	</div>
+</div>
+<!--顶部logo-->
+<div class="widthbgdd">
+<div class="logo_con" >
+	<!--logo-->
+	<a href="/" title="【爱之谷】进口成人用品 - 情趣用品 - 两性用品 - 性生活必备性爱用品商城"><img src="http://img.aizhigu.tv/images/index_new/logo.jpg" class="logo" alt="【爱之谷】进口成人用品 - 情趣用品 - 两性用品 - 性生活必备性爱用品商城"/></a>
+	<!--中间诚信保障图标-->
+	<div class="safe_pic"><!--1230分辨率下marginleft185-->
+		<ul>
+			<li><a href="/chengxin.html" target="_blank"><img src="http://img.aizhigu.tv/images/index_new/safe_pic1.jpg" alt="【爱之谷】进口成人用品 - 情趣用品 - 两性用品 - 性生活必备性爱用品商城"/></a></li>
+			<li><a href="/help/60day.html" target="_blank"><img src="http://img.aizhigu.tv/images/index_new/safe_pic2.jpg" alt="【爱之谷】进口成人用品 - 情趣用品 - 两性用品 - 性生活必备性爱用品商城"/></a></li>
+			<li><a href="/help/ysbh.html" target="_blank"><img src="http://img.aizhigu.tv/images/index_new/safe_pic3.jpg" alt="【爱之谷】进口成人用品 - 情趣用品 - 两性用品 - 性生活必备性爱用品商城"/></a></li>
+			<li><a href="/" target="_blank"><img class="phone_pic" src="http://img.aizhigu.tv/images/index_new/safe_pic4.jpg" alt="【爱之谷】进口成人用品 - 情趣用品 - 两性用品 - 性生活必备性爱用品商城"/></a></li>
+		</ul>
+	</div>
+	<!--右侧去购物车结算-->
+	<div id="settleup">
+		<dl class="" id="dl_settleup">
+			<dt class="ld"> <s class="shopping"><span id="shopping-amount">0</span></s> <a rel="nofollow" href="/shop_cart.php">去购物车结算</a> <b></b> </dt>
+			<dd style="display:none;" id="prompt_shopcart">
+			</dd>
+		</dl>
+	</div>
+</div>
+<div class="clear"></div>
+</div>
+<!--导航菜单-->
+<div class="azg_menu">
+<div class="azg_menu_main">
+
+<!-- 全部商品分类下拉菜单 -->
+<div class="menuleft">
+<div class="menuleft_top">全部商品分类</div>
+<div class="menuleft_bottom" style="display:none" data="">
+<ul>
+<li class="hotj gray_li" >	
+<span class=" h2" style=" color:#333333;"><span class="white_arew left" style="width:170px"><s></s>热门推荐</span></span>
+<div class="cloums">
+<a href="/siwa/" target="_blank" title="丝袜"><em>丝袜</em></a>
+<a href="/siwa/" target="_blank" title="黑丝"><em>黑丝</em></a>
+<a href="/tiaodan/" target="_blank" title="跳蛋"><em>跳蛋</em></a>
+<a href="/feijibei/" target="_blank" title="飞机杯"><em>飞机杯</em></a></div>						
+
+<div class="subItem_hd" style=" display:none;">
+<p class="tc"></p>
+<span class="baise"><p class="left">热门标签</p><p class="rightname"><em>性用品</em><p class="right" style="font-weight:normal">大家都喜欢的</p></p></span>
+<div class="leimu">
+<a href="/nvxingqingyutisheng/" target="_blank" title="性欲"><em>性欲</em></a>
+<a href="/siwa/" target="_blank" title="黑丝袜"><em>黑丝袜</em></a>
+<a href="/xinggantaozhuang/" target="_blank" title="性感"><em>性感</em></a>
+<a href="/se/" target="_blank" title="色"><em>色</em></a>
+<a href="/qingqu/" target="_blank" title="情趣内衣"><em>情趣内衣</em></a>
+<a href="/zhifuyouhuo/" target="_blank" title="制服诱惑"><em>制服诱惑</em></a>
+<a href="/zhuanti/gdian.php" target="_blank" title="G点"><em>G点</em></a>
+<a href="/les/" target="_blank" title="拉拉"><em>拉拉</em></a>
+<a href="/gay/" target="_blank" title="男男"><em>男男</em></a>
+<a href="/koujiaoziwei/" target="_blank" title="自慰器具"><em>自慰器具</em></a>
+<a href="/sandiantoushi/" target="_blank" title="透视装"><em>透视装</em></a>
+<a href="/fangzhenyangju/" target="_blank" title="阳具"><em>阳具</em></a>
+<a href="/nanxingzengda/" target="_blank" title="增大"><em>增大</em></a>
+<a href="/yanyunceyun/" target="_blank" title="早孕试纸"><em>早孕试纸</em></a>
+<a href="/nanyongyanshi/" target="_blank" title="延时喷剂"><em>延时喷剂</em></a>
+<a href="/zhenrendaomo/" target="_blank" title="倒模"><em>倒模</em></a>
+<a href="/zhifuyouhuo/" target="_blank" title="诱惑"><em>诱惑</em></a></div>
+<div class="clear"></div>
+<span class="baise"><a href="/mingqizhengming/"  class="left" style=" color:#333333;" target="_blank" title="女优名器">女优名器</a></span>
+<p class="remen">
+<a href="http://www.aizhigu.com.cn/product.5250.html" target="_blank" title="美臀CICI 幼女私处倒模">美臀CICI 幼女私处倒模</a>
+<a href="/product.4431.html" target="_blank" title="波多野结衣">波多野结衣</a>
+<a href="/product.4369.html" target="_blank" title="小泽玛利亚二代">小泽玛利亚二代</a>
+<a href="/product.4426.html" target="_blank" title="颜如忆">颜如忆</a>
+<a href="/product.4727.html" target="_blank" title="兽兽">兽兽</a></p>
+</div>
+</li>
+<li class="woman">	
+<div  class="white_arew"><s></s><a href="/woman/" target="_blank" title="女性用品"  style=" color:#333333;">女性用品</a></div>
+<div class="cloums">
+<a href="/zhendongbang/" target="_blank" title="振动棒"><em>振动棒</em></a>
+<a href="/fangzhenyangju/" target="_blank" title="阳具"><em>阳具</em></a>
+<a href="/les/" target="_blank" title="les"><em>les</em></a></div>
+
+<div class="subItem_hd" style=" display:none;">
+<p class="tc"></p>
+<span class="import"><p class="left"><a href="/woman/" target="_blank" style=" color:#000000; " title="女性用品馆">女性用品馆</a></p><p class="rightname">女性性生活使用的成人用品</p></span>
+<div class="leimu">
+<a href="/gdianciji/" title="单点刺激"><em>单点刺激</em></a>
+<a href="/shuangdianciji/" title="多点按摩棒"><em>多点按摩棒</em></a>
+<a href="/fangzhenyangju/" title="仿真阳具"><em>仿真阳具</em></a>
+<a href="/tiaodan/" title="跳蛋/外阴"><em>跳蛋/外阴</em></a>
+<a href="/avzhendongbang/" title="AV振动棒"><em>AV振动棒</em></a>
+<a href="/lazhu/" title="后庭拉珠"><em>后庭拉珠</em></a>
+<a href="/chuandaizuoqi/" title="穿戴玩具"><em>穿戴玩具</em></a>
+<a href="/shuangfengciji/" title="胸部刺激"><em>胸部刺激</em></a>
+<a href="/heixiujiqi/" title="嘿咻机器"><em>嘿咻机器</em></a></div>
+<div class="clear"></div>
+<span class="baise">热门标签</span>
+<p class="remen">
+<a href="/traitlabel/%E5%90%8E%E7%94%A8.html" target="_blank" title="后用">后用</a>
+<a href="/traitlabel/%E8%B6%85%E9%80%BC%E7%9C%9F.html" target="_blank" title="超逼真">超逼真</a>
+<a href="/traitlabel/%E5%BC%BA%E9%9C%87.html" target="_blank" title="强震">强震</a>
+<a href="/traitlabel/%E7%A9%BF%E6%88%B4.html" target="_blank" title="穿戴">穿戴</a>
+<a href="/traitlabel/%E5%90%B8%E5%90%AE.html" target="_blank" title="吸吮">吸吮</a>
+<a href="/traitlabel/%E5%A4%9A%E8%A7%A6%E7%82%B9.html" target="_blank" title="多触点">多触点</a>
+<a href="/traitlabel/%E9%98%B4%E8%92%82%E5%88%BA%E6%BF%80.html" target="_blank" title="阴蒂刺激">阴蒂刺激</a>
+<a href="/traitlabel/%E5%8F%8C%E4%BA%BA%E5%85%B1%E6%8C%AF.html" target="_blank" title="双人共振">双人共振</a></p>
+<div class="clear"></div>
+<span class="baise">活动套餐</span>
+<p class="remen">
+<a href="/zhuanti/blacklelo.html" target="_blank" title="奢华折上折">奢华折上折</a>
+<a href="/zuhe/tiaoqing.html" target="_blank" title="调情助欲大促">调情助欲大促</a>
+<a href="/product.4429.html" target="_blank" title="G点神器6折包邮">G点神器6折包邮</a></p>
+</div>
+</li>
+<li class="gray_li man">	
+<div class="white_arew"><s></s><a href="/man/" target="_blank" title="男性用品" style=" color:#333333;">男性用品</a></div>
+<div class="cloums">
+<a href="/mingqizhengming/" target="_blank" title="名器"><em>名器</em></a>
+<a href="/nanyongyanshi/" target="_blank" title="阳痿早泄"><em>阳痿早泄</em></a>
+<a href="/feijibei/" target="_blank" title="打飞机"><em>打飞机</em></a></div>
+
+<div class="subItem_hd" style=" display:none;">
+<p class="tc"></p>
+<span class="import"><p class="left"><a href="/man/" target="_blank" style=" color:#000000; " title="男性用品馆">男性用品馆</a></p><p class="rightname">男性性生活使用的成人用品</p></span>
+<div class="leimu">
+<a href="/feijibei/" title="手动自乐杯"><em>手动自乐杯</em></a>
+<a href="/diandongfeijibei/" title="电动自乐杯"><em>电动自乐杯</em></a>
+<a href="/mingqizhengming/" title="女优名器"><em>女优名器</em></a>
+<a href="/zhenrendaomo/" title="臀胸倒模"><em>臀胸倒模</em></a>
+<a href="/chongqiwawa/" title="充气娃娃"><em>充气娃娃</em></a>
+<a href="/houtingciji/" title="前列腺刺激"><em>前列腺刺激</em></a>
+<a href="/zhuboqi/" title="助勃锻炼器"><em>助勃锻炼器</em></a>
+<a href="/taohuan/" title="套环"><em>套环</em></a></div>
+<div class="clear"></div>
+<span class="baise">热门标签</span>
+<p class="remen">
+<a href="/traitlabel/%E5%8F%98%E9%A2%91.html" target="_blank" title="变频">变频</a>
+<a href="/traitlabel/%E6%98%93%E6%B8%85%E6%B4%97.html" target="_blank" title="易清洗">易清洗</a>
+<a href="/traitlabel/%E5%90%AB%E5%A4%84%E5%A5%B3%E8%86%9C.html" target="_blank" title="含处女膜">含处女膜</a>
+<a href="/traitlabel/%E4%BB%BF%E7%9C%9F%E8%82%8C%E8%82%A4.html" target="_blank" title="仿真肌肤">仿真肌肤</a>
+<a href="/traitlabel/%E7%9C%9F%E4%BA%BA%E6%AF%94%E4%BE%8B.html" target="_blank" title="真人比例">真人比例</a>
+<a href="/traitlabel/%E7%9C%9F%E4%BA%BA%E5%8F%91%E5%A3%B0.html" target="_blank" title="真人发声">真人发声</a>
+<a href="/traitlabel/%E9%98%B2%E6%B0%B4.html" target="_blank" title="防水">防水</a></p>
+<div class="clear"></div>
+<span class="baise">活动套餐</span>
+<p class="remen">
+<a href="/zuhe/zengda.html" target="_blank" title="增大组合">增大组合</a>
+<a href="http://www.aizhigu.com.cn/zhuanti/2013daomo.html" target="_blank" title="热卖倒模专场">热卖倒模专场</a>
+<a href="/search-张筱雨-0-0-1.html" target="_blank" title="约会张筱雨">约会张筱雨</a></p>
+</div>
+</li>
+<li class="cuiyu">	
+<div class="white_arew"><s></s><a href="/baojian/" target="_blank" title="助情保健" style=" color:#333333;">助情保健</a></div>
+<div class="cloums">
+<a href="/nanyongyanshi/" target="_blank" title="延时喷剂"><em>延时喷剂</em></a>
+<a href="/nvxingqingyutisheng/" target="_blank" title="性欲"><em>性欲</em></a>  
+<a href="/fangzhenyangju/" target="_blank" title="阴道"><em>阴道</em></a></div>
+
+<div class="subItem_hd" style=" display:none;">
+<p class="tc"></p>
+<span class="import1"><p class="left"><a href="/baojian/" target="_blank" style=" color:#000000; " title="助情保健用品馆">助情保健用品馆</a></p><p class="rightname">两性性生活性爱保健品</p></span>
+<div class="leimu">
+<a href="/nanyongyanshi/" title="助勃延时"><em>助勃延时</em></a>
+<a href="/nvxingqingyutisheng/" title="助欲提升"><em>助欲提升</em></a>
+<a href="/zhuqingxiangshui/" title="助情香水"><em>助情香水</em></a>
+<a href="/suoyin/" title="缩阴护阴"><em>缩阴护阴</em></a>
+<a href="/anmojingyou/" title="按摩精油"><em>按摩精油</em></a>
+<a href="/fengxiong/" title="丰胸美乳"><em>丰胸美乳</em></a>
+<a href="/yanyunceyun/" title="验孕测孕"><em>验孕测孕</em></a>
+<a href="/qingjiehuli/" title="器具消毒"><em>器具消毒</em></a></div>
+<div class="clear"></div>
+<span class="baise">热门标签</span>
+<p class="remen">
+<a href="/traitlabel/%E7%A1%85%E5%9F%BA.html" target="_blank" title="硅基">硅基</a>
+<a href="/traitlabel/%E5%B0%8F%E6%83%85%E8%B6%A3.html" target="_blank" title="小情趣">小情趣</a>
+<a href="/traitlabel/%E6%B0%B4%E6%B6%A6.html" target="_blank" title="水润">水润</a>
+<a href="/traitlabel/%E6%B0%B4%E5%9F%BA.html" target="_blank" title="水基">水基</a>
+<a href="/traitlabel/%E5%8F%A3%E4%BA%A4.html" target="_blank" title="口交" style="display:none; ">kou交</a>
+<a href="/traitlabel/%E6%9D%80%E8%8F%8C.html" target="_blank" title="杀菌">杀菌</a>
+<a href="/traitlabel/%E7%BC%A9%E9%98%B4.html" target="_blank" title="缩阴">缩阴</a>
+<a href="/zhuanti/2014yanshi.html" target="_blank" title="2018男性外用延时喷剂排行榜">2018男性外用延时喷剂排行榜</a>
+</p>
+<div class="clear"></div>
+<span class="baise">活动套餐</span>
+<p class="remen">
+<a href="/product.4213.html" target="_blank" title="催欲凝胶买一送一">催欲凝胶买一送一</a>
+<a href="http://www.aizhigu.com.cn/product.5262.html" target="_blank" title="久二延时喷剂限时立减">久二延时喷剂限时立减</a>
+<a href="http://www.aizhigu.com.cn/product.4767.html" target="_blank" title="缩阴跳蛋">缩阴跳蛋</a>
+<a href="http://www.aizhigu.com.cn/zhuanti/wanrong2014.html" target="_blank" title="丸荣2h2d延时喷剂">丸荣2h2d延时喷剂</a>
+</p>
+</div>
+</li>
+<li class="neiyi gray_li">	
+<div class="white_arew"><s></s><a href="/qingqu/" target="_blank" title="情趣内衣" style=" color:#333333;">情趣内衣</a></div>
+<div class="cloums">
+<a href="/kaidanglianti/" target="_blank" title="蕾丝"><em>蕾丝</em></a>
+<a href="/xinggantaozhuang/" target="_blank" title="性感内衣"><em>性感内衣</em></a>
+<a href="/qingquneiku/" target="_blank" title="丁字裤"><em>丁字裤</em></a></div>
+
+<div class="subItem_hd" style=" display:none;">
+<p class="tc"></p>
+<span class="import1"><p class="left"><a href="/qingqu/" target="_blank" style=" color:#000000; " title="情趣内衣用品馆">情趣内衣用品馆</a></p><p class="rightname">增加两性性爱情趣的内衣类情趣用品</p></span>
+<div class="leimu">
+<a href="/xinggantaozhuang/" title="情趣裙装"><em>情趣裙装</em></a>
+<a href="/siwa/" title="丝袜美腿"><em>丝袜美腿</em></a>
+<a href="/sandiantoushi/" title="激情三点"><em>激情三点</em></a>
+<a href="/zhifuyouhuo/" title="制服诱惑"><em>制服诱惑</em></a>
+<a href="/qingquneiku/" title="情趣内裤"><em>情趣内裤</em></a>
+<a href="/xingganshuiyi/" title="情趣睡衣"><em>情趣睡衣</em></a>
+<a href="/nanshineiyi/" title="男士内衣"><em>男士内衣</em></a></div>
+<div class="clear"></div>
+<span class="baise">热门标签</span>
+<p class="remen">
+<a href="/traitlabel/%E9%AD%85%E6%83%91.html" target="_blank" title="魅惑">魅惑</a>
+<a href="/traitlabel/%E7%BD%91%E6%A0%BC.html" target="_blank" title="网格">网格</a>
+<a href="/traitlabel/%E7%8B%82%E9%87%8E.html" target="_blank" title="狂野">狂野</a>
+<a href="/traitlabel/%E6%80%A7%E6%84%9F.html" target="_blank" title="性感">性感</a>
+<a href="/traitlabel/%E9%AB%98%E8%B4%B5.html" target="_blank" title="高贵">高贵</a>
+<a href="/traitlabel/%E5%88%B6%E6%9C%8D.html" target="_blank" title="制服">制服</a>
+<a href="/traitlabel/%E9%95%82%E7%A9%BA.html" target="_blank" title="镂空">镂空</a></p>
+<div class="clear"></div>
+<span class="baise">活动套餐</span>
+<p class="remen">
+<a href="/zhuanti/2013cxny.html" target="_blank" title="买3送1">买3送1</a>
+<a href="/zuhe_info.60.html" target="_blank" title="组合立省42">组合立省42</a>
+<a href="/zhuanti/siwa_2013.html" target="_blank" title="买丝袜送内衣">买丝袜送内衣</a></p>
+</div>
+</li>
+<li class="shuangren">	
+<div class="white_arew"><s></s><a href="/xingai/" target="_blank" title="双人情趣" style=" color:#333333;">双人情趣</a></div>
+<div class="cloums">
+<a href="/gdianciji/" target="_blank" title="高潮"><em>高潮</em></a>
+<a href="/taohuan/" target="_blank" title="羊眼圈"><em>羊眼圈</em></a>
+<a href="/product.4431.html" target="_blank" title="AV"><em>AV</em></a>
+<a href="/zhuqingxiangshui/" target="_blank" title="催情"><em>催情</em></a></div>
+
+<div class="subItem_hd" style=" display:none;">
+<p class="tc"></p>
+<span class="import1"><p class="left"><a href="/xingai/" target="_blank" style=" color:#000000; " title="双人情趣用品馆">双人情趣用品馆</a></p><p class="rightname">SM/同志/拉拉/两性调情等情趣用品</p></span>
+<div class="leimu">
+<a href="/tiaoqing/" title="前戏玩具"><em>前戏玩具</em></a>
+<a href="/nannvgongzhen/" title="男女共振器"><em>男女共振器</em></a>
+<a href="/nueai/" title="SM内衣"><em>SM内衣</em></a>
+<a href="/sm/" title="SM用品"><em>SM用品</em></a>
+<a href="/les/" title="女同"><em>女同</em></a>
+<a href="/gay/" title="男同"><em>男同</em></a></div>
+<div class="clear"></div>
+<span class="baise">热门标签</span>
+<p class="remen">
+<a href="/traitlabel/%E8%B6%85%E5%BC%BA%E6%91%A9%E6%93%A6.html" target="_blank" title="超强摩擦">超强摩擦</a>
+<a href="/traitlabel/%E5%85%A8%E9%9D%A2%E5%88%BA%E6%BF%80.html" target="_blank" title="全面刺激">全面刺激</a>
+<a href="/traitlabel/%E9%9C%87%E5%8A%A8.html" target="_blank" title="震动">震动</a>
+<a href="/traitlabel/%E7%BA%AF%E7%A1%85%E8%83%B6.html" target="_blank" title="纯硅胶">纯硅胶</a>
+<a href="/traitlabel/%E7%94%B7%E5%A5%B3%E5%85%B1%E6%8C%AF.html" target="_blank" title="男女共振">男女共振</a>
+<a href="/traitlabel/%E6%98%93%E6%B8%85%E6%B4%97.html" target="_blank" title="易清洗">易清洗</a>
+<a href="/traitlabel/%E5%90%8E%E7%94%A8.html" target="_blank" title="后用">后用</a></p>
+<div class="clear"></div>
+<span class="baise">活动套餐</span>
+<p class="remen">
+<a href="/zhuanti/4umachine.html" target="_blank" title="顶级嘿咻机器爱器买1送2">顶级嘿咻机器买1送2</a>
+<a href="/product.3876.html" target="_blank" title="买维依送尚牌安全套">买维依送尚牌安全套</a>
+<a href="/sm/" target="_blank" title="激情狂野SM">激情狂野SM</a></p>
+</div>
+</li>
+<li class="runhua gray_li">	
+<div class="white_arew"><s></s><a href="/runhuaji/" target="_blank" title="润滑剂" style=" color:#333333;">润滑剂</a></div>
+<div class="cloums">
+<a href="/anmojingyou/" target="_blank" title="精油"><em>精油</em></a>
+<a href="/gdianciji/" target="_blank" title="性高潮"><em>性高潮</em></a>
+<a href="/shuirongxingrunhuaji/" target="_blank" title="水溶性润滑剂"><em>水溶性润滑剂</em></a></div>
+
+<div class="subItem_hd" style=" display:none;">
+<p class="tc"></p>
+<span class="import1"><p class="left"><a href="/runhuaji/" target="_blank" style=" color:#000000; " title="润滑剂用品馆">润滑剂用品馆</a></p><p class="rightname">克服干涩提升性爱情趣的润滑性用品</p></span>
+<div class="leimu">
+<a href="/shuirongxingrunhuaji/" title="人体润滑液"><em>人体润滑液</em></a>
+<a href="/houtingrunhuaji/" title="后庭润滑液"><em>后庭润滑液</em></a>
+<a href="/binghuorunhuaji/" title="冰火润滑液"><em>冰火润滑液</em></a>
+<a href="/cuiyurunhuaji/" title="助欲润滑液"><em>助欲润滑液</em></a></div>
+<div class="clear"></div>
+<span class="baise">热门标签</span>
+<p class="remen">
+<a href="/traitlabel/%E5%90%8E%E7%94%A8.html" target="_blank" title="后用">后用</a>
+<a href="/traitlabel/%E6%9D%BE%E5%BC%9B.html" target="_blank" title="松弛">松弛</a>
+<a href="/traitlabel/%E7%A1%85%E5%9F%BA.html" target="_blank" title="硅基">硅基</a>
+<a href="/traitlabel/%E6%8B%B3%E8%84%9A.html" target="_blank" title="拳脚">拳脚</a>
+<a href="/traitlabel/%E7%83%AD%E6%84%9F.html" target="_blank" title="热感">热感</a>
+<a href="/traitlabel/%E6%8B%89%E4%B8%9D.html" target="_blank" title="拉丝">拉丝</a>
+<a href="/traitlabel/%E5%90%8E%E7%94%A8.html" target="_blank" title="后用">后用</a></p>
+<div class="clear"></div>
+<span class="baise">活动套餐</span>
+<p class="remen">
+<a href="/sortlist.265.232.html" target="_blank" title="eros热销">eros热销</a>
+<a href="/search-杜蕾斯-0-0-1.html" target="_blank" title="杜蕾斯">杜蕾斯</a>
+<a href="/search-冈本-0-0-1.html" target="_blank" title="冈本">冈本</a></p>
+</div>
+</li>
+<li class="anquantao" style=" margin-right:0px">	
+<div class="white_arew"><s></s><a href="/biyuntao/" target="_blank" title="安全套" style=" color:#333333;">安全套</a></div>
+<div class="cloums">
+<a href="/pinpai/durex/" target="_blank" title="杜蕾斯"><em>杜蕾斯</em></a>
+<a href="/pinpai/beilile/" target="_blank" title="倍力乐"><em>倍力乐</em></a>
+<a href="/pinpai/okamoto/" target="_blank" title="冈本"><em>冈本</em></a></div>
+
+<div class="subItem_hd" style=" display:none;">
+<p class="tc" style=" "></p>
+<span class="import1"><p class="left"><a href="/biyuntao/" target="_blank" style=" color:#000000; " title="安全套用品馆">安全套用品馆</a></p><p class="rightname">延时/浮点安全套等提升性生活品质的性用品</p></span>
+<div class="leimu">
+<a href="/chaobao/" title="超薄避孕套"><em>超薄避孕套</em></a>
+<a href="/yanshi/" title="持久型套套"><em>持久型套套</em></a>
+<a href="/fudian/" title="浮点避孕套"><em>浮点避孕套</em></a>
+<a href="/luowen/" title="螺纹避孕套"><em>螺纹避孕套</em></a>
+<a href="/binghuo/" title="冰火避孕套"><em>冰火避孕套</em></a>
+<a href="/guoxiang/" title="果味避孕套"><em>果味避孕套</em></a>
+<a href="/quwei/" title="个性避孕套"><em>个性避孕套</em></a></div>
+<div class="clear"></div>
+<span class="baise">热门标签</span>
+<p class="remen">
+<a href="/traitlabel/%E8%B6%85%E8%BD%BB.html" target="_blank" title="超轻">超轻</a>
+<a href="/traitlabel/%E6%B6%B2%E6%80%81.html" target="_blank" title="液态">液态</a>
+<a href="/traitlabel/%E5%A5%B3%E7%94%A8.html" target="_blank" title="女用">女用</a>
+<a href="/traitlabel/%E8%9E%BA%E7%BA%B9.html" target="_blank" title="螺纹">螺纹</a>
+<a href="/traitlabel/%E5%A4%A7%E5%8F%B7.html" target="_blank" title="大号">大号</a>
+<a href="/traitlabel/%E6%9E%9C%E9%A6%99.html" target="_blank" title="果香">果香</a></p>
+<div class="clear"></div>
+<span class="baise">活动套餐</span>
+<p class="remen">
+<a href="/product.4395.html" target="_blank" title="冰感狼牙套限时特价">冰感狼牙套限时特价</a>
+<a href="/zuhe_info.94.html" target="_blank" title="世界第二薄安全套5.9折">世界第二薄安全套5.9折</a>
+<a href="/zuhe_info.54.html" target="_blank" title="最好的安全套组合">最好的安全套组合</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+<ul class="Nav_main">
+<li class=""><a href="/" title="首页">首页</a></li>
+
+<li class=""><a href="/woman/" title="女性用品">女性用品</a>
+	<ol class="Nav_noneBox" style="display: none;">
+		
+				<li><a href="/zhendongbang/">震动棒</a></li>
+				<li><a href="/fangzhenyangju/">仿真阳具</a></li>
+				<li><a href="/zhuanzhubang/">转珠棒</a></li>
+				<li><a href="/avzhendongbang/">AV棒</a></li>
+				<li><a href="/tiaodan/">跳蛋</a></li>
+				<li><a href="/heixiujiqi/">性爱机器</a></li>
+				<li><a href="/suoyin/">丰胸缩阴</a></li>
+				<li><a href="/sichuyanghu/">私处养护</a></li>
+				<li><a href="/les/">女同玩具</a></li>
+				<li><a href="/houtingciji/">肛塞拉珠</a></li>
+				<li><a href="/qingjiehuli/">消毒清洗</a></li>
+				
+	</ol>
+</li>
+<li class=""><a href="/man/" title="男性用品">男性用品</a>
+	<ol class="Nav_noneBox" style="display: none;">
+		
+				<li><a href="/feijibei/">飞机杯</a></li>
+				<li><a href="/zhenrendaomo/">名器倒模</a></li>
+				<li><a href="/nanyongyanshi/">延时喷剂</a></li>
+				<li><a href="/yanshishijin/">延时湿巾</a></li>
+				<li><a href="/chongqiwawa/">充气娃娃</a></li>
+				<li><a href="/zhuboqi/">助勃增大器</a></li>
+				<li><a href="/yanshitao/">延时套环</a></li>
+				<li><a href="/houtingciji/">肛塞拉珠</a></li>
+				<li><a href="/qingjiehuli/">消毒清洗</a></li>
+				
+	</ol>
+</li>
+<li class=""><a href="/baojian/" title="助情保健">助情保健</a>
+	<ol class="Nav_noneBox" style="display: none;">
+		
+				<li><a href="/nvxingqingyutisheng/">女用催欲</a></li>
+				<li><a href="/nanyongzhuqing/">男用助情</a></li>
+				<li><a href="/zhuqingxiangshui/">助情香水</a></li>
+				<li><a href="/nanxingbaojian/">男性保健</a></li>
+				
+	</ol>
+</li>
+<li class=""><a href="/qingqu/" title="情趣内衣">情趣内衣</a>
+	<ol class="Nav_noneBox" style="display: none;">
+		
+				<li><a href="/xinggantaozhuang/">性感睡裙</a></li>
+				<li><a href="/zhifuyouhuo/">制服诱惑</a></li>
+				<li><a href="/sandiantoushi/">火辣三点</a></li>
+				<li><a href="/siwa/">丝袜美腿</a></li>
+				<li><a href="/qingquneiku/">女士内裤</a></li>
+				<li><a href="/nanshineiyi/">男士内衣</a></li>
+				
+	</ol>
+</li>
+<li class=""><a href="/xingai/" title="双人情趣">双人情趣</a>
+	<ol class="Nav_noneBox" style="display: none;">
+		
+				<li><a href="/nannvgongzhen/">双人共振</a></li>
+				<li><a href="/sm/">SM用品</a></li>
+				<li><a href="/nueai/">性爱家具</a></li>
+				<li><a href="/tiaoqing/">互动玩具</a></li>
+				
+	</ol>
+</li>
+<li class=""><a href="/runhuaji/" title="润滑液">润滑液</a>
+	<ol class="Nav_noneBox" style="display: none;">
+		
+				<li><a href="/shuirongxingrunhuaji/">水溶性润滑液</a></li>
+				<li><a href="/houtingrunhuaji/">后庭润滑液</a></li>
+				<li><a href="/binghuorunhuaji/">唇吸润滑液</a></li>
+				<li><a href="/cuiyurunhuaji/">助欲润滑液</a></li>
+				
+	</ol>
+</li>
+<li class=""><a href="/biyuntao/" title="安全套">安全套</a>
+	<ol class="Nav_noneBox" style="display: none;">
+		
+				<li><a href="/yanshi/">延时</a></li>
+				<li><a href="/chaobao/">超薄</a></li>
+				<li><a href="/quwei/">个性</a></li>
+				<li><a href="/shuanghua/">超润滑</a></li>
+				<li><a href="/durex/">杜蕾斯</a></li>
+				<li><a href="/gangben/">冈本</a></li>
+				<li><a href="/beilile/">倍力乐</a></li>
+				<li><a href="/diliugan/">第六感</a></li>
+				<li><a href="/jissbon/">杰士邦</a></li>
+				<li><a href="/elasun/">尚牌</a></li>
+				
+	</ol>
+</li>
+
+</ul>
+<script>
+	$("ul.Nav_main li").hover(function(){$(this).children("ol").show();},function(){$(this).children("ol").hide();});
+</script>
+<div class="Nav_others">
+<input type="button" class="searchbtn" onclick="javascript:return search_Submit();"/>
+<input type="text" style="color:#ccc"; class="searchbox" name="keywords" value="" onkeypress="if(event.keyCode == 13){search_Submit();}"/>
+</div>
+</div>
+</div>
+ 
+<!--seo跳转--> 
+ 
+<!--seo跳转--><!--头部结束-->
+
+<!--当前位置开始-->
+<!--当前位置开始-->
+<div id="position" style="width: 1200px;margin: 5px auto;text-align: left; line-height:22px;">
+	<span  class="gray">
+		<a href="/">首页</a> >
+		<a href="member.php">会员中心</a>
+				 > 我的订单			</span>
+</div>
+<!--当前位置结束--><!--当前位置结束-->
+
+<div class="container">
+
+<!--导航菜单开始-->
+<!--左边导航开始-->
+ <div class="leftdiv">
+     <div id="categorty">
+    	<dl>
+        	<dt><strong>会员中心</strong></dt>
+            <dd class="borD6">
+            	<h1 class="up">交易管理↓</h1>
+                <ul>
+					<li id="categorty_span"><p><a href="member.php?act=order_list" target="_self">我的订单</a></p></li>
+					<li>
+						<p><a href="member.php?act=bonus" target="_self">电子礼券</a></p>
+					</li>
+	                <li><p><a href="member.php?act=integral" target="_self">我的积分</a></p></li>
+	                <li><p><a href="member.php?act=account" target="_self">账户余额</a></p></li>
+	                </ul>
+	                	<h1 class="up">个人应用↓</h1>
+	                <ul>
+					<li><p><a href="member.php?act=profile" target="_self">个人信息管理</a></p></li>
+					<li><p><a href="member.php?act=mail_sys" target="_self">邮件订阅设置</a></p></li>
+					<li><p><a href="member.php?act=address_list" target="_self">收货地址</a></p></li>
+	                <li><p><a href="member.php?act=collection_list" target="_self">收藏夹</a></p></li>
+	                <li><p><a href="member.php?act=comment_list" target="_self">我的评价</a></p></li>
+	                <li><p><a href="member.php?act=consult_list" target="_self">我的咨询</a></p></li>
+                </ul>
+            </dd>
+        </dl>
+     </div>
+  </div>
+<!--左边导航结束-->
+<!--导航菜单结束-->
+
+<!--右边部分开始-->
+	<div class="rightdiv">
+
+		<div class="righttop">
+			<p class="left">您目前是爱之谷的<span class="red">注册用户</span> ,成功消费<span class="red">1000</span>元即可成为<span class="red">vip</span>，购物享受最低价</span>。</p>
+        	<p class="right rmar10"><span class="righttop_span blue2"><a href="/help/hyyh.html">[VIP会员特权说明]</a></span></p>
+        </div>
+
+        <!--选项卡开始-->
+		<div id="filter-tabs" class="tmar10">
+        	<ul>
+        	    <li>
+        	    	<a class="other" href="member.php?act=order_list&type=process">处理中的订单</a>
+        	    </li>
+            	<li>
+            		<a class="other" href="member.php?act=order_list&type=finished">交易成功的订单</a>
+            	</li>
+            	<li>
+            		<a class="selected" href="member.php?act=order_list&type=cancel">取消的订单</a>
+            	</li>
+
+            	<li>
+            		<a class="other" href="member.php?act=order_list&type=return">退货的订单</a>
+            	</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!--选项卡结束-->
+
+	<!--表格开始-->
+	<table border="0" cellspacing="1" cellpadding="0" class="table_list">
+		<tr>
+			<th>订单编号</th>
+			<th>订单中的部分商品</th>
+			<th>收货人</th>
+			<th>订单金额</th>
+			<th style="width:130px;">下单时间</th>
+			<th>订单状态</th>
+			<th style="width:150px;">操作</th>
+		</tr>
+
+				<tr>
+		    <td class="t1">
+			    <a href="member.php?act=order_detail&order_sn=2018052878020">
+			    2018052878020			    </a>
+		    </td>
+		    <td class="img1">
+		    				    				    						    	<a href="/product.6246.html" target="_blank"><img src="images/goods/201702/thumb_img/6246_thumb_G_1487590237501.jpg" title="霏慕 性感三件套和服套装 * 1" /></a>
+			    			    			    </td>
+		    <td class="t2">测试</td>
+		    <td class="t3">
+		    	<p style="color:#cc0000;">￥99.00</p>
+		    	<p>在线支付</p>
+		    </td>
+		    <td class="t4 gray">
+		    	<p>2018-05-28 16:53:17</p>
+		    </td>
+		    <td class="t5">
+            <div class="relative" onmouseover="javascript:process_show(2018052878020);">
+		    	<p class="redd9line t5_p" style="cursor:pointer;">
+		    		<span class="t5_gen"></span><strong class="left">已取消</strong>
+		    	</p>
+		    	<div class="process" id="process_2018052878020" style="display:none;"></div>
+            </div>
+		    </td>
+			<td>
+
+		    	<span class="blue2">
+		    		<a href="member.php?act=order_detail&order_sn=2018052878020" target="_blank">订单详情</a>
+		    	</span>
+
+	    		<!--取消,未付款未确认-->
+		    		    		<!--取消-->
+
+		    	<!--去支付-->
+		    		    		<!--去支付-->
+
+		    	<!--收货确认-->
+		    		    		<!--收货确认-->
+
+		   	</td>
+		  </tr>
+  		
+		
+		</table>
+		<!--表格结束-->
+
+	<!--页码开始-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--翻页 start-->
+<form name="selectPageForm" action="http://www.aizhigu.com.cn/member.php?act=order_list&type=cancel" method="get">
+
+<!--翻页 start-->
+	<div class="yema gray">
+    	<div class="yema_2">
+    		<ul>
+    			<li>
+    				总计 <b>1</b> 个记录</span>
+    			
+  					  					
+  					  					  					
+  					
+  					  					
+				    
+  					  
+  					
+  					  					
+    			</li>
+    			
+    			    			
+    		</ul>
+		<div class="clear"></div>
+      </div>
+    </div>
+<!--翻页 END-->
+
+</form>
+<script type="Text/Javascript" language="JavaScript">
+function selectPage(sel){sel.form.submit();}
+</script>
+	<!--页码结束-->
+<div class="clear"></div>
+  </div>
+<!--右边部分结束-->
+<div class="clear"></div>
+</div>
+<!-- 弹出层 -->
+
+<div id="hiddenModalContent" style="display:none;background:#ffffff; ">
+			<!--弹出层样式开始-->
+	  	<div class="free_div" style="border:#333 5px solid; font-size:12px;">
+        <p><span style=" font-size:16px; font-weight:bold; color:#1b8802; float:left;">恭喜您，激活码领取成功！</span><a id="TB_closeWindowButton" href="javascript: closeTBWindowBox();" style="color:#999; font-size:12px; float:right;">[关闭]</a></p>
+        <div class="clear"></div>
+		<span style=" color:#666; padding-left:12px;">激活码：</span><br />
+		<span style=" color:#666;">激活地址：</span><a href="http://web.lingxiu98.com/client/aizhigu.html" target="_blank">http://web.lingxiu98.com/client/aizhigu.html</a>。	
+	  	</div>
+		<!--弹出层样式结束-->
+</div>
+<!-- 弹出层 -->
+<script type="text/javascript" src="http://img.aizhigu.tv/js/common.js"></script>
+<script type="text/javascript" src="http://img.aizhigu.tv/js/calendar/calendar.js"></script>
+<script type="text/javascript">
+//当前显示
+var last_process_id = '';
+var timer = null;
+$(function(){
+	$('#btn_search').click(function(){
+		var start 	= $('#start_date').val();
+		var end 	= $('#end_date').val();
+		var order_type	= $('#hd_order_type').val();
+
+		window.location.href = 'member.php?act=order_list&type=' + order_type;
+	});
+
+
+
+    //划出
+    $('.process').mouseleave(function(){
+        var id = $(this).attr('id');
+        var order_id = id.split('_')[1];
+        process_hide(order_id);
+    });
+});
+
+//显示跟踪状态
+function process_show(order_sn){
+	var $process = $("#process_" + order_sn);
+
+    if($process.html() == ''){
+    	$process.load("member.php?act=order_detail_ajax&order_sn="+order_sn, function(){
+        });
+    }
+
+   if(last_process_id != '' && (last_process_id != order_sn)){
+       process_hide(last_process_id);
+   }
+   last_process_id = order_sn;
+
+   $process.show();
+   $process.parent().addClass('top_index');
+   $process.parent().parent().attr('class','t5_hover');
+}
+
+//隐藏跟踪状态
+function process_hide(order_sn){
+
+    var $process = $("#process_" + order_sn);
+    $process.hide();
+    $process.parent().removeClass('top_index');
+    $process.parent().parent().attr('class','t5');
+    last_process_id = '';
+}
+
+//收货确认
+function affirm_received(){
+	if(!confirm('确认已收货?')){
+		return false;
+	}
+	return true;
+}
+</script>
+<!--底部开始-->
+<div class="azg_footer">
+	<div class="azg_asures" style="">
+		<ul class="asure">
+			<li ><a href="/help/ppsq.html" target="_blank" rel="nofollow"><img src="http://img.aizhigu.tv/images/index_new/common_ico1.jpg" alt="100%正品 厂家正品担保" /></a></li>
+			<li><a href="/help/czaq.html" target="_blank" rel="nofollow"><img src="http://img.aizhigu.tv/images/index_new/common_ico2.jpg" alt="材料安全认证"/></a></li>
+			<li ><a href="/help/60day.html" target="_blank" rel="nofollow"><img src="http://img.aizhigu.tv/images/index_new/common_ico3.jpg" alt="60天退换货"/></a></li>
+			<li><a href="/help/ysbh.html" target="_blank" rel="nofollow"><img src="http://img.aizhigu.tv/images/index_new/common_ico4.jpg" alt="10层隐私保护"/></a></li>
+			<li ><a href="/help/yfsm.html" target="_blank" rel="nofollow"><img src="http://img.aizhigu.tv/images/index_new/common_ico5.jpg" alt="在线支付满99元免运费"/></a></li>
+			<li ><a href="/help/psfs.html" target="_blank" rel="nofollow"><img src="http://img.aizhigu.tv/images/index_new/common_ico6.jpg" alt="1910个城市送货上门 货到付款"/></a></li>
+		</ul>
+	</div>
+	<!--帮助指南 width:1230px;width:930px;-->
+	<div class="azg_byself">
+		<div class="azg_byself_con" style="">
+			<div class="azg_byself_conl"><img class="phone_pic" src="http://img.aizhigu.tv/images/index_new/tele_azg_sub.jpg" alt="" /></div>
+			<div  class="azg_byself_conr" style=" ">
+				<ul class="linksf">
+					<li class="links">微信爱之谷</li>
+					<li><a href="" target="_blank">爱随手 密贴心</a></li>
+					<li><img src="http://img.aizhigu.tv/images/index_new/mobile_pic.jpg" /></li>
+				</ul>
+				<ul class="linksa">
+					<li class="links">使用帮助</li>
+					<li><a href="/help/gmfs.html" target="_blank" rel="nofollow">购买方式</a></li>
+      				<li><a href="/help/wglc.html" target="_blank" rel="nofollow">网购流程</a></li>
+      				<li><a href="/help/hyyh.html" target="_blank" rel="nofollow">会员优惠</a></li>
+      				<li><a href="/help/cjwt.html" target="_blank" rel="nofollow">常见问题</a></li>
+			 	</ul>
+				<ul class="linksb">
+					<li class="links">购物保障</li>
+					<li><a href="/help/60day.html" target="_blank" rel="nofollow">60天服务</a></li>
+      				<li><a href="/help/ysbh.html" target="_blank" rel="nofollow">隐私保护</a></li>
+      				<li><a href="/help/ppsq.html" target="_blank" rel="nofollow">品牌授权</a></li>
+      				<li><a href="/help/hhlc.html" target="_blank" rel="nofollow">换货流程</a></li>
+				</ul>
+				<ul class="linksc">
+					<li class="links">支付方式</li>
+					<li><a href="/help/payonline.html" target="_blank" rel="nofollow">网上支付</a></li>
+      				<li><a href="/help/paybank.html" target="_blank" rel="nofollow">银行支付</a></li>
+      				<li><a href="/help/payhuo.html" target="_blank" rel="nofollow">货到付款</a></li>
+      				<li><a href="/help/payyue.html" target="_blank" rel="nofollow">余额支付</a></li>
+				</ul>
+				<ul class="linksd">
+					<li class="links">私密快送</li>
+					<li><a href="/help/psfs.html" target="_blank" rel="nofollow">配送方式</a></li>
+      				<li><a href="/help/bzzs.html" target="_blank" rel="nofollow">包装展示</a></li>
+    				<li><a href="/help/qssm.html" target="_blank" rel="nofollow">签收说明</a></li>
+      				<li><a href="/help/yfsm.html" target="_blank" rel="nofollow">运费说明</a></li>
+				</ul>
+				<ul class="linkse">
+					<li class="links">客户服务</li>
+                          				<li><a href="/member.php?act=order_list" target="_blank" rel="nofollow">订单查询</a></li>
+      				<li><a href="/intro/aboutus.php" target="_blank" rel="nofollow">关于我们</a></li>
+      				<li><a href="/intro/contact.php" target="_blank" rel="nofollow">联系我们</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--关于我们内联-->
+	<div class="azg_aboutus">
+		<div class="clear"></div>
+		<ul class="aboutus">
+			<li><a href="/" rel="nofollow" style=" color:#666666;">首页</a></li><li><a href="/intro/aboutus.php" target="_blank" rel="nofollow" style=" color:#666666;">关于我们</a></li>
+			<li><a href="/intro/privacy.php" target="_blank" rel="nofollow" style=" color:#666666;">隐私申明</a></li><li><a href="/intro/qualification.php" target="_blank" rel="nofollow" style=" color:#666666;">资质证明</a>
+			</li>
+			<li><a href="/union/" target="_blank" rel="nofollow" style=" color:#666666;">网站联盟</a></li><li><a href="/help/shangwuhezuo.html" target="_blank" rel="nofollow" style=" color:#666666;">供应商入驻</a></li><li><a href="http://wpa.qq.com/msgrd?v=3&uin=2832727514&site=qq&menu=yes" target="_blank" rel="nofollow" style=" color:#666666;">批发加盟</a></li><li><a href="/help/tuiguang.html" target="_blank" rel="nofollow" style=" color:#666666;">市场推广</a></li><li><a href="http://www.aizhigu.com.cn/link.php" target="_blank" rel="nofollow" style=" color:#666666;">友情链接</a></li><li><a href="/intro/recruitment.php" target="_blank" rel="nofollow" style=" color:#666666;">人才招聘</a></li>
+			<li><a href="/intro/contact.php" target="_blank" rel="nofollow" style=" color:#666666;">联系我们</a></li><li class="bornone"><a href="/intro/feedback.php" target="_blank" rel="nofollow" style=" color:#666666;">意见反馈</a></li>
+		</ul>
+		<div class="banquan">Copyright © 2003-2018 爱之谷成人用品 All Rights Reserved. </div>
+		
+		<!--正品结束-->
+		<ul class="rongyu">
+			<li><a href="/zhuanti/huojiang.php" target="_blank" rel="nofollow"><img src="http://img.aizhigu.tv/images/tpl/index/di-ico1.gif" class="marl10" alt="2011年最具价值奖 成人行业电子商务"/></a></li>
+			<li><a href="http://net.china.cn/" target="_blank" rel="external nofollow"><img src="http://img.aizhigu.tv/images/tpl/index/di-ico3.gif" class="marl10" alt="不良信息举报中心" /></a></li>
+			<li><a href="http://bj.cyberpolice.cn/index.jsp" target="_blank" rel="external nofollow"><img src="http://img.aizhigu.tv/images/tpl/index/di-ico4.gif" alt="网络110报警电话" class="marl10"/></a></li>
+			
+		</ul>
+		<!--友情链接-->
+				<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+<!--尾文件，加载分屏代码-->
+<script type="text/javascript">
+var lazyload_effect = ( $.browser.msie &&　$.browser.version　< 8 )?"show":"fadeIn";
+$(document).ready(function(){
+	var $imgOriginal = $("img[original]");
+	//360图片不显示问题
+	if($.browser.msie){
+		$imgOriginal.each(function(){
+			$(this).attr('src',$(this).attr('original'));
+		});
+	}else{
+		$imgOriginal.lazyload({threshold:200,effect: lazyload_effect});
+	}
+});
+$.getJSON("/ajax/cp_back.php?pos=index,mobile", function(data){
+	if(data){
+		$(".azg_aboutus").append(data['index']);
+		if(data['mobile']){
+			$(".wap_mobile a").attr("href",data['mobile']);
+		}
+	}
+});
+</script>
+<div style="display:none">
+</div>
+<!--统计代码--><!--底部结束-->
+<script type="text/javascript" id='speedup_test' src="https://idm-su.baidu.com/su.js"></script>
+</body>
+</html>
