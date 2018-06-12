@@ -1,0 +1,249 @@
+
+[mysql]
+
+service mysql start
+service mysql stop 
+service mysql restart
+
+mysql -u root -p
+
+
+[apache]
+service apache2  [ start | stop | restart | status ]
+
+
+
+[git]
+1、创建一个工作区：mkdir learngit
+
+2、把这个工作区变成Git可以管理的仓库（也就是创建git的版本库）：git init
+
+3、把工作区中的readme.txt添加到版本库中的暂存区：git add readme.txt
+
+4、把暂存区中的readme.txt提交到版本库中的分支：git commit -m "wrote a readme file"
+
+5、查看仓库当前状态：git status
+
+6、查看readme.txt修改过的内容：git diff readme.txt
+
+7、显示所有版本号信息：git log 嫌输出信息太多可以用：git log --pretty=oneline
+
+8、回退到上一个版本：git reset --hard HEAD^ 或者：git reset --hard HEAD~1
+
+9、回退到任意版本：git reset --hard <版本号>（前几位就可以了）
+
+10、a.想去到未来：git reflog    b.查看到未来的某个节点的版本号：git reset --hard <版本号>（前几位就可以了）
+
+11、场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令：git checkout -- <file>。
+
+    场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令：git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
+
+    场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交（不过前提是没有推送到远程库），分两步，第一步用：git log --pretty=oneline查看所有版本号信息，接着用：git reset --hard <版本号>（前几位就可以了）
+
+   场景4：删除/误删工作区文件：我们可以使用：git status 会提示版本信息不一致，并且显示删了什么文件，然后按照git的提示信息到底是要把这个文件也从版本库中删除还是误删了要从版本库中恢复。现在你有两个选择，一是确实要从版本库中删除该文件，那就用命令：git rm <file> 删掉，并且：git commit -m "remove a file" 另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：git checkout -- <file>
+
+
+
+使用远程仓库：
+
+1、安装完成后进行git配置，这个有点强制性要你输入用户信息的指令：git config --global user.name "lafyq" 和：git config --global user.eamil "lafyq@qq.com"
+
+2、创建验证用的公钥：ssh-keygen -C 'lafyq@qq.com' -t rsa  然后连续按回车，就会在用户目录~/.ssh/下建立相应的密钥文件
+
+3、查看公钥：cat ~/.ssh/id_rsa.pub  然后把公钥复制粘贴到github上就可以了
+
+4、在github上创建一个repository 创建完成后会有提示： 目前，在GitHub上的这个learngit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。
+
+5、在本地关联远程仓库：git remote add origin git@github.com:lafyq/learngit.git  添加后，远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。
+
+6、把本地仓库的所有内容推送到远程仓库上：git push -u origin master  把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+7、此后，每次本地提交后，只要有必要，就可以使用命令：git push origin master推送最新修改；
+
+ps.如果我们要从远程库克隆一个本地库：git clone <远程仓库名称>
+
+
+
+[分支]：其实切换分支就是指针在切换
+
+1、查看分支：git branch
+
+2、创建分支：git branch <分支名称>
+
+3、切换分支：git checkout <分支名称>
+
+4、创建+切换分支：git checkout -b <分支名称>
+
+5、合并某分支到当前分支：git merge <分支名称>
+
+6、删除分支：git branch -d <分支名称>
+
+
+场景一：
+当我们在分支上对readme.txt做了修改，某人在主分支上也对readme.txt做了修改，那么合并将会出现：
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+1、此时我们用：git status 查看当前版本库的状态
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+    both modified:   readme.txt
+
+2、然后查看一下readme.txt的内容：vim readme.txt
+<<<<<<< HEAD
+Creating a new branch is quick & simple.
+=======
+Creating a new branch is quick AND simple.
+>>>>>>> feature1
+
+注意：Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容，我们修改如下后保存：
+Creating a new branch is quick and simple.
+
+3、然后再次提交：（注意是提交，不是合并）
+$ git add readme.txt
+$ git commit -m "conflict fixed"
+
+4、查看分支的合并情况（图的形式）：$ git log --graph --pretty=oneline --abbrev-commit
+
+
+
+
+场景二：
+通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。
+如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
+
+$ git merge --no-ff -m "merge with no-ff" <分支名称>
+
+	合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
+
+
+
+场景三：
+当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支issue-101来修复它，但是，等等，当前正在dev上进行的工作还没有提交。并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
+
+幸好，Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：
+
+$ git stash
+
+$ 在出现bug的分支上创建分支，修复bug，合并，删除临时创建的分支.....
+
+查看刚刚存储的工作现场：
+$ git stash list
+>> stash@{0}: WIP on dev: f52c633 add merge
+
+有两种恢复现场的方式：
+恢复：$ git stash apply stash@{0}
+恢复并删除：$ git stash pop
+
+
+修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
+当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。
+
+
+场景四、如果要丢弃一个没有被合并过的分支，可以通过git branch -D <分支名称>  进行强行删除。
+
+
+
+
+[多人协作]
+1、把远程库克隆到本地：git clone git@github.com:lafyq/learngit.git (默认情况下，你的小伙伴只能看到本地的master分支。)
+
+2、如果要克隆远程origin的dev分支到本地：git checkout -b dev origin/dev
+
+3、做出一些修改后提交：
+	$ git add env.txt
+	$ git commit -m "add env"
+	$ git push origin dev
+
+4、你的小伙伴已经向origin/dev分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送：
+	$ git add env.txt
+	$ git commit -m "add new env"
+	$ git push origin dev
+
+报错：
+To github.com:lafyq/learngit.git
+ ! [rejected]        dev -> dev (non-fast-forward)
+error: failed to push some refs to 'git@github.com:michaelliao/learngit.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+推送失败，因为你的小伙伴的最新提交和你试图推送的提交有冲突，解决办法也很简单，Git已经提示我们，先用git pull把最新的提交从origin/dev抓下来，然后，在本地合并，解决冲突，再推送：
+	$ git pull
+
+报错：
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+
+git pull也失败了，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
+	$ git branch --set-upstream-to=origin/dev dev
+	>> Branch 'dev' set up to track remote branch 'dev' from 'origin'.
+
+在执行一下：git pull  
+这回git pull成功，但是合并有冲突，需要手动解决，解决的方法和分支管理中的解决冲突完全一样。解决后，提交，再push：
+	$ git push origin dev
+
+
+小结：
+查看远程库信息，使用git remote -v；
+
+本地新建的分支如果不推送到远程，对其他人就是不可见的；
+
+从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+
+在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+
+建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+
+从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
